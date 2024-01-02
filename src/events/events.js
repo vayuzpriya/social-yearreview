@@ -1,0 +1,5 @@
+export const CHANGE_TABS = "CHANGE_TABS";
+export const REDIRECTION = "REDIRECTION";
+export const BYTE_COUNT = "BYTE_COUNT";
+export const SHOWCASE_ERROR_MESSAGE = "SHOWCASE_ERROR_MESSAGE";
+
