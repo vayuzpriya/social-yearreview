@@ -751,7 +751,7 @@
 										>145
 									</span> Created Events
 								</li>
-								<li style="--accent-color: #fb337b">
+								<li style="--accent-color: #fb337b" class="position-relative">
 									<span class="infographis-count count-3"
 										>14
 									</span> Insight Read
