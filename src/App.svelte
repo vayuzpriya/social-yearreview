@@ -14,7 +14,7 @@
 		setTimeout(function () {
 			var swiper = new Swiper(".memoriesSlider", {
 				grabCursor: true,
-				// loop: true,
+				loop: true,
 				effect: "creative",
 				creativeEffect: {
 					prev: {
@@ -28,10 +28,10 @@
 						rotate: [-180, 0, 0],
 					},
 				},
-				//   autoplay: {
-				//     delay: 5000,
-				//     disableOnInteraction: false,
-				//   },
+				  autoplay: {
+				    delay: 5000,
+				    disableOnInteraction: false,
+				  },
 				keyboard: {
 					enabled: true,
 				},
