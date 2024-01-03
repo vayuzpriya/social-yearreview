@@ -713,7 +713,7 @@
 								</figure>
 								<div class="shared-event-details">
 									<p
-										class="event-name memories-byte-event-name"
+										class="event-name memories-byte-event-name pb-0"
 									>
 										AI tools Designers should explore in
 										2024
