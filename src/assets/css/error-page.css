@@ -584,6 +584,7 @@ li:nth-child(2n) .infographis-count {
   left: 50%;
   top: 0;
   transform: translate(-50%, 0);
+  white-space: nowrap;
 }
 
 .swiper-slide-active {

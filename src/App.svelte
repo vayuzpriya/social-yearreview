@@ -718,16 +718,6 @@
 										AI tools Designers should explore in
 										2024
 									</p>
-									<p>
-										AI tools Designers should explore in
-										2024AI tools Designers should explore in
-										2024AI tools Designers should explore in
-										2024AI tools Designers should explore in
-										2024AI tools Designers should explore in
-										2024AI tools Designers should explore in
-										2024AI tools Designers should explore in
-										2024...
-									</p>
 								</div>
 							</div>
 							<h4 class="text-center text-white slide-heading">
