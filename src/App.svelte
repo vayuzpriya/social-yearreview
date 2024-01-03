@@ -751,12 +751,12 @@
 										>145
 									</span> Created Events
 								</li>
-								<li style="--accent-color: #fb337b" class="position-relative">
+								<li style="--accent-color: #fb337b" class="fadeInRight position-relative">
 									<span class="infographis-count count-3"
 										>14
 									</span> Insight Read
 								</li>
-								<li style="--accent-color: #9c54e5">
+								<li class="fadeInLeft" style="--accent-color: #9c54e5">
 									<span class="infographis-count count-3"
 										>4
 									</span> Shout Out Received
