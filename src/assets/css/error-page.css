@@ -590,7 +590,9 @@ li:nth-child(2n) .infographis-count {
 .swiper-slide-active {
   height: calc(100vh - 100px);
 }
-
+.swiper-creative .swiper-slide {
+  padding-top: 40px;
+}
 
 /* New CSS starts */
 
