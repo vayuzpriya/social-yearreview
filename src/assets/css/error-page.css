@@ -666,3 +666,14 @@ li:nth-child(2n) .infographis-count {
   font-size: 18px;
   font-weight: 500;
 }
+
+.merories_insight{
+  max-width: 500px;
+    margin: 0 auto;
+}
+@media only screen and (max-width:767px){
+  .merories_insight{
+    max-width: 100%;
+     
+  }
+}

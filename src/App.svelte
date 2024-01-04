@@ -46,10 +46,10 @@
 						rotate: [-180, 0, 0],
 					},
 				},
-				  autoplay: {
-				    delay: 5000,
-				    disableOnInteraction: false,
-				  },
+				//   autoplay: {
+				//     delay: 5000,
+				//     disableOnInteraction: false,
+				//   },
 				keyboard: {
 					enabled: true,
 				},
@@ -687,7 +687,7 @@
 						{#each newsvar as news}
 						<div class="swiper-slide">
 							<div
-								class="news_detail_redirection shared-news-byte"
+								class="news_detail_redirection shared-news-byte merories_insight"
 							>
 								<figure class="shared-event-image-div">
 									<img
@@ -697,12 +697,12 @@
 									/>
 								</figure>
 								<div class="shared-event-details">
-									<p
-										class="event-name memories-byte-event-name pb-0"
-									>
+									<p class="insight-category mb-0">Featured-category</p>
+									<p class="event-name memories-byte-event-name pb-0">
 									{news.research_title}
 									</p>
-								</div>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book . </p>
+								</div> 
 							</div>
 							<h4 class="text-center text-white slide-heading">
 								Insight Read most
