@@ -661,13 +661,18 @@ li:nth-child(2n) .infographis-count {
 .rank-container .rank {
   position: absolute;
   right: 0;
-  background: #fff;
+  /* background: #fff; */
   padding: 10px 15px;
   border-radius: 50%;
   bottom: 22px;
   line-height: normal;
   font-size: 18px;
   font-weight: 500;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(30, 31, 38, 0.85);
+  color: #fff;
+  border: 4px dotted #e9e9e9;
 }
 
 .insight-bg-reflec {
