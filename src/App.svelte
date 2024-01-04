@@ -1,13 +1,31 @@
 <script>
-	// import { Utility } from "./../network/Utility";
+	import { Utility } from "./network/Utility";
 	// import Service from "./../network/Service";
 	// import { Config } from "./../config";
+	import {getdetails,Byte,News,TotalRank} from "./network/getMemory.js";
 	import jQ from "jquery";
 	import { onMount, onDestroy } from "svelte";
+  import { each } from "svelte/internal";
 
 	onMount(async () => {
-		vayuzevent();
 		loadConfitti();
+		getdetails();
+		setTimeout(function () {
+			vayuzevent();
+		},3000)
+	});
+	let rankvar = [];
+	TotalRank.subscribe((value) => {
+		rankvar = value;
+	});
+
+	let bytevar = [];
+	Byte.subscribe((value) => {
+		bytevar = value;
+	});
+	let newsvar = [];
+	News.subscribe((value) => {
+		newsvar = value;
 	});
 
 	function vayuzevent() {
@@ -526,6 +544,13 @@
 			});
 		});
 	}
+	function getimg(imgs){
+		if(imgs.length>0){
+			return imgs[0].source_link;
+		}else{
+			return "";
+		}
+	}
 </script>
 
 <link
@@ -541,30 +566,34 @@
 			>
 				Year Recap'23
 			</h3>
-			<div class="memories-main-slider">
+			<div class="memories-main-slider memoryshimmerdiv">
+				{@html Utility.addShimmer(1)}
+				{@html Utility.addShimmer(1)}
+				{@html Utility.addShimmer(1)}
+			</div>
+			<div class="memories-main-slider d-none mainmemorydiv">
 				<div class="swiper memoriesSlider">
 					<div class="swiper-wrapper">
+						{#if bytevar.length>0}
+						{#each bytevar as byte}
 						<div class="swiper-slide">
 							<div class="like-byte">
-								<div
-									id="bytefeed_id_1703752974298"
-									class="byte-card"
-								>
+								<div class="byte-card">
 									<div class="">
 										<div class="post-user-detail">
-											<div
-												class="user-image-name d-flex align-items-center"
-											>
+											<div class="user-image-name d-flex align-items-center">
 												<div class="user-image">
 													<figure class="me-2 mb-0">
-														<img
-															class="profile_redirection pointer user-profile-image"
-															height="40"
-															width="40"
-															src="https://vayuzsocial.s3.ap-south-1.amazonaws.com/images/1696835608593_1696835608593.blob"
-															alt="Monika Singh"
-															title="Monika Singh"
-														/>
+														{#each byte.user_data as userd}
+														{#if userd.profile_image}
+															<img src="{userd.profile_image}" title="{userd.name}'s Profile Image"
+															alt="{userd.name}'s Profile Image" class="profile_redirection pointer user-profile-image">
+															{:else}
+															<img src="https://vayuzsocial.s3.ap-south-1.amazonaws.com/bitovn-cdn/byte/byte_assets/profile-default.png"
+															title="{userd.name}'s Profile Image" alt="{userd.name}'s Profile Image"
+															class="profile_redirection pointer user-profile-image">
+															{/if}
+														{/each}
 													</figure>
 												</div>
 												<div class="user-name-div">
@@ -574,7 +603,7 @@
 														<a
 															href="#"
 															class="profile_redirection user-name text-white"
-															>Monika</a
+															>{#each byte.user_data as userd}{userd.fullname}{/each}</a
 														>
 													</p>
 													<p
@@ -593,7 +622,7 @@
 																data-bs-placement="top"
 																title="28 Dec 2023 14:12:54"
 																aria-label="28 Dec 2023 14:12:54"
-															></i> 1d
+															></i>{Utility.calculate_time_difference(byte.created_at)}
 														</span>
 														<i
 															class="icon-color fa-regular fa-period mx-1"
@@ -627,58 +656,10 @@
 									<div
 										class="post-content post-metafeed_id_1703752974298"
 									>
-										<div
-											id="descfeed_id_1703752974298"
-											getstyle="[object Object]"
-											class="post-description"
-										>
-											<div
-												class="byte-text two"
-												id="visible_post_content_feed_id_1703752974298"
-											>
+										<div class="post-description">
+											<div class="byte-text two">
 												<p class="bigemoji">
-													<span
-														class="ql-emojiblot"
-														data-name="christmas_tree"
-														>&#xFEFF;
-														<span
-															contenteditable="false"
-															>&#xFEFF;
-															<span
-																contenteditable="false"
-																>&#xFEFF;
-																<span
-																	contenteditable="false"
-																>
-																	<span
-																		class="ap ap-christmas_tree"
-																		>🎄</span
-																	>
-																</span>&#xFEFF;
-															</span>&#xFEFF;
-														</span>&#xFEFF;
-													</span>
-													<span
-														class="ql-emojiblot"
-														data-name="heart"
-														>&#xFEFF;
-														<span
-															contenteditable="false"
-															>&#xFEFF;
-															<span
-																contenteditable="false"
-																>&#xFEFF;
-																<span
-																	contenteditable="false"
-																>
-																	<span
-																		class="ap ap-heart"
-																		>❤</span
-																	>
-																</span>&#xFEFF;
-															</span>&#xFEFF;
-														</span>&#xFEFF;
-													</span>
+													{@html byte.content}
 												</p>
 											</div>
 										</div>
@@ -687,8 +668,8 @@
 											<img
 												class="image_popup byte-image-memories"
 												index="0"
-												src="https://vayuzsocial.s3.ap-south-1.amazonaws.com/images/1703752305244_1703752305244.jpeg"
-												data-demo-src="https://vayuzsocial.s3.ap-south-1.amazonaws.com/images/1703752305244_1703752305244.jpeg"
+												src="{getimg(byte.post_images)}"
+												data-demo-src="{getimg(byte.post_images)}"
 												alt=""
 											/>
 										</figure>
@@ -700,13 +681,17 @@
 							</h4>
 							<!-- <dotlottie-player class="most-like-lottie" autoplay loop src="./background-images/memories-like.lottie" style="width: 200px; height:200px; margin: 0 auto;"></dotlottie-player> -->
 						</div>
+						{/each}
+						{/if}
+						{#if newsvar.length>0}
+						{#each newsvar as news}
 						<div class="swiper-slide">
 							<div
 								class="news_detail_redirection shared-news-byte"
 							>
 								<figure class="shared-event-image-div">
 									<img
-										src="https://vayuzsocial.s3.ap-south-1.amazonaws.com/images/1703682126012_1703682126012.blob"
+										src="{news.cover_image}"
 										alt=""
 										class="memories-byte-event-img shared-image-banner"
 									/>
@@ -715,8 +700,7 @@
 									<p
 										class="event-name memories-byte-event-name pb-0"
 									>
-										AI tools Designers should explore in
-										2024
+									{news.research_title}
 									</p>
 								</div>
 							</div>
@@ -725,39 +709,41 @@
 							</h4>
 							<!-- <dotlottie-player class="most-like-lottie" autoplay loop src="./background-images/memories-like.lottie" style="width: 200px; height:200px; margin: 0 auto;"></dotlottie-player> -->
 						</div>
+						{/each}
+						{/if}
 						<div class="swiper-slide">
 							<ol>
 								<li
 									class="fadeInLeft"
 									style="--accent-color: #36b9ea"
 								>
-									<span class="infographis-count count-1"
-										>145
+									<span class="totalbyte infographis-count count-1"
+										>0
 									</span>My Posted Bytes
 								</li>
 								<li
 									class="fadeInRight position-relative"
 									style="--accent-color: #3ecbb1"
 								>
-									<span class="infographis-count count-2"
-										>145
+									<span class="totalinsights infographis-count count-2"
+										>0
 									</span> Published Insight
 								</li>
 								<li
 									class="fadeInLeft"
 									style="--accent-color: #fcc003"
 								>
-									<span class="infographis-count count-3"
-										>145
+									<span class="totalevents infographis-count count-3"
+										>0
 									</span> Created Events
 								</li>
 								<li style="--accent-color: #fb337b" class="fadeInRight position-relative">
-									<span class="infographis-count count-3"
-										>14
+									<span class="totalinsightread infographis-count count-3"
+										>0
 									</span> Insight Read
 								</li>
 								<li class="fadeInLeft" style="--accent-color: #9c54e5">
-									<span class="infographis-count count-3"
+									<span class="totalshoutout infographis-count count-3"
 										>4
 									</span> Shout Out Received
 								</li>
@@ -766,23 +752,29 @@
 								My InfoGraphics
 							</h4>
 						</div>
-						<div class="swiper-slide text-center">
-							<h4 class=" text-center text-white slide-heading">
-								Your Rank in 2023
-							</h4>
-							<div class="rank-container mt-3">
-								<figure>
-									<img
-									class="profile_redirection pointer rank-dp"
-									src="https://vayuzsocial.s3.ap-south-1.amazonaws.com/images/1696835608593_1696835608593.blob"
-									alt="Monika Singh"
-									title="Monika Singh"
-								/>
-								<div class="rank">17</div>
-								</figure>
-							</div>
-							<h3 class="text-white mt-3 hotpink-glitter year">Monika Singh</h3>
-						</div>
+						{#if rankvar.length>0}
+							{#each rankvar as ranks}
+								<div class="swiper-slide text-center">
+									<h4 class=" text-center text-white slide-heading">
+										Your Rank in 2023
+									</h4>
+									<div class="rank-container mt-3">
+										<figure>
+											{#if ranks.profile_image}
+											<img src="{ranks.profile_image}" title="{ranks.name}'s Profile Image"
+											alt="{ranks.name}'s Profile Image" class="profile_redirection pointer rank-dp">
+											{:else}
+											<img src="https://vayuzsocial.s3.ap-south-1.amazonaws.com/bitovn-cdn/byte/byte_assets/profile-default.png"
+											title="{ranks.name}'s Profile Image" alt="{ranks.name}'s Profile Image"
+											class="profile_redirection pointer rank-dp">
+											{/if}
+										<div class="rank">{ Math.round(ranks.lastRankDetails[0].averageUserRank)}</div>
+										</figure>
+									</div>
+									<h3 class="text-white mt-3 hotpink-glitter year">{ranks.name} {ranks.lname}</h3>
+								</div>
+							{/each}
+						{/if}
 					</div>
 					<!-- <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div> -->

@@ -1,6 +1,6 @@
 export class Config {
     static getBaseURL() {
-      return "https://social-byte-backend.onrender.com/"
+      return "https://byte-backend.vayuz.com/";
       return "http://localhost:3100/"
       // return "https://social.vayuz.com/"
     }
