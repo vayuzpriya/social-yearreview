@@ -195,8 +195,11 @@ li:nth-child(2n) .infographis-count {
 }
 
 .memories-byte-event-name {
-  font-size: 25px;
-  padding: 20px 0px;
+  font-size: 18px;
+  color: #fff !important;
+  font-weight: 500;
+  padding-bottom: 5px;
+  margin-top: 15px;
 }
 
 .memories-byte-event-img {
@@ -592,7 +595,7 @@ li:nth-child(2n) .infographis-count {
 }
 
 .swiper-creative .swiper-slide {
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 /* New CSS starts */
@@ -667,13 +670,69 @@ li:nth-child(2n) .infographis-count {
   font-weight: 500;
 }
 
-.merories_insight{
-  max-width: 500px;
-    margin: 0 auto;
+.insight-bg-reflec {
+  /* transition: none; */
+  background: #1e1f26;
+  --radius: 10px;
+  --inset: 2rem;
+  --inset-right: 0;
+  --offset: -1rem;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: var(--offset);
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: #fff;
+  clip-path: inset(var(--inset-top, var(--inset)) var(--inset-right, var(--inset)) var(--inset-bottom, var(--inset)) var(--inset-left, var(--inset)) round var(--radius));
+  contain: strict;
+  transition: clip-path .3s ease .1s;
+
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(30, 31, 38, 0.85);
 }
-@media only screen and (max-width:767px){
-  .merories_insight{
+
+.merories_insight {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  background: transparent;
+}
+
+.merories_insight .cat {
+  color: #b7bbc8 !important;
+  margin-top: -22px;
+  background-color: #1e1f26;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 0 10px 10px 10px;
+  z-index: 9999;
+  position: fixed;
+}
+
+.merories_insight .desc {
+  color: #b7bbc8 !important;
+  font-size: 14px;
+}
+
+.merories_insight .shared-event-details {
+  padding: 0 15px 15px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.merories_insight:hover .insight-bg-reflec {
+  clip-path: inset(0 0 35px 0 round var(--radius));
+  transition-delay: 0s;
+}
+
+@media only screen and (max-width:767px) {
+  .merories_insight {
     max-width: 100%;
-     
+
   }
 }

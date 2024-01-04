@@ -686,9 +686,8 @@
 						{#if newsvar.length>0}
 						{#each newsvar as news}
 						<div class="swiper-slide">
-							<div
-								class="news_detail_redirection shared-news-byte merories_insight"
-							>
+							<div class="news_detail_redirection shared-news-byte merories_insight">
+								<div class="insight-bg-reflec"></div>
 								<figure class="shared-event-image-div">
 									<img
 										src="{news.cover_image}"
@@ -697,11 +696,11 @@
 									/>
 								</figure>
 								<div class="shared-event-details">
-									<p class="insight-category mb-0">Featured-category</p>
-									<p class="event-name memories-byte-event-name pb-0">
+									<p class="insight-category mb-0 cat"><img class="img-fluid pe-1" alt="" src="https://www.upload.ee/image/16125791/cat-icon.png">Featured-category</p>
+									<p class="event-name memories-byte-event-name">
 									{news.research_title}
 									</p>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book . </p>
+									<p class="desc">Lorem Ipsum is simply dummy text of the printing and...</p>
 								</div> 
 							</div>
 							<h4 class="text-center text-white slide-heading">
