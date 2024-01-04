@@ -7,7 +7,7 @@ await import ("./assets/css/swiper.min.css");
 import App from './App.svelte';
 
 const app = new App({
-	target: document.getElementById("error-page"),
+	target: document.getElementById("social_year_review"),
 	props: {
 		name: 'world',
 		names : ['Name 1', 'Name 2', 'Name 3']
