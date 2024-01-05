@@ -762,4 +762,5 @@ li:nth-child(2n) .infographis-count {
 }
 .cat-image-insight{
   width:25px !important;
+  max-height: 25px !important;
 }
