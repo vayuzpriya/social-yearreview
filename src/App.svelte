@@ -710,7 +710,7 @@ function shortTitle(html){
 								</figure>
 								<div class="shared-event-details">
 									<p class="insight-category mb-0 cat">
-										<img class="img-fluid pe-1" alt="" src="https://www.upload.ee/image/16125791/cat-icon.png">
+										<img class="img-fluid pe-1 cat-image-insight" width="25" height="25" alt="" src="https://www.upload.ee/image/16125791/cat-icon.png">
 										{#if news.category_details}
 										{#each news.category_details as cat}
 										{cat.category}
