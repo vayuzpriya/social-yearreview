@@ -701,7 +701,7 @@
 									<p class="event-name memories-byte-event-name">
 									{news.research_title}
 									</p>
-									<p class="desc">Utility.tr</p>
+									<!-- <p class="desc">Utility.tr</p> -->
 								</div> 
 							</div>
 							<h4 class="text-center text-white slide-heading">
