@@ -551,6 +551,19 @@
 			return "";
 		}
 	}
+function shortTitle(html){
+  try{
+ if (html != undefined) {
+          var html = html.replace(/(<([^>]+)>)/ig, '')
+      }
+      if (html && html.replace(/<br *\/?>/gi, '\n').length > 80) {
+      return html.substr(0, 80);
+      }
+      return html
+    }catch(e){
+      return ""
+    }
+}
 </script>
 
 <link
@@ -697,11 +710,17 @@
 								</figure>
 								<div class="shared-event-details">
 									<p class="insight-category mb-0 cat">
-										<img class="img-fluid pe-1" alt="" src="https://www.upload.ee/image/16125791/cat-icon.png">Featured-category</p>
+										<img class="img-fluid pe-1" alt="" src="https://www.upload.ee/image/16125791/cat-icon.png">
+										{#if news.category_details}
+										{#each news.category_details as cat}
+										{cat.category}
+										{/each}
+										{/if}
+									</p>
 									<p class="event-name memories-byte-event-name">
 									{news.research_title}
 									</p>
-									<!-- <p class="desc">Utility.tr</p> -->
+									<p class="desc">{shortTitle(news.metaDescription)}</p>
 								</div> 
 							</div>
 							<h4 class="text-center text-white slide-heading">
