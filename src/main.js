@@ -1,7 +1,7 @@
 
 await import("./assets/bootstrap/css/bootstrap.min.css");
 // common css for Byte
-await import ("./assets/css/error-page.css");
+await import ("./assets/css/year_recap.css");
 await import ("./assets/css/swiper.min.css");
 
 import App from './App.svelte';

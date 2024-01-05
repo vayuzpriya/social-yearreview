@@ -738,3 +738,25 @@ li:nth-child(2n) .infographis-count {
 
   }
 }
+
+.memories-shimmer{
+  padding: 12px;
+}
+.memories-shimmer-inside{
+  -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: placeHolderShimmer;
+    -webkit-animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background-image: linear-gradient(to right, #c1dceb 4%, #a3cbe1 25%, #c1dceb 36%) !important;
+    background-repeat: no-repeat;
+    background-size: 800px 500px;
+    height: 500px;
+    position: relative;
+}

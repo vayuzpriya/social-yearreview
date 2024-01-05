@@ -568,9 +568,9 @@
 			</h3>
 			<div class="memories-main-slider memoryshimmerdiv">
 				{@html Utility.addShimmer(1)}
-				{@html Utility.addShimmer(1)}
-				{@html Utility.addShimmer(1)}
+				
 			</div>
+			{@html Utility.addShimmer(1)}
 			<div class="memories-main-slider d-none mainmemorydiv">
 				<div class="swiper memoriesSlider">
 					<div class="swiper-wrapper">
@@ -697,11 +697,11 @@
 								</figure>
 								<div class="shared-event-details">
 									<p class="insight-category mb-0 cat">
-										<!-- <img class="img-fluid pe-1" alt="" src="https://www.upload.ee/image/16125791/cat-icon.png">Featured-category</p> -->
+										<img class="img-fluid pe-1" alt="" src="https://www.upload.ee/image/16125791/cat-icon.png">Featured-category</p>
 									<p class="event-name memories-byte-event-name">
 									{news.research_title}
 									</p>
-									<!-- <p class="desc">Utility.tr</p> -->
+									<p class="desc">Utility.tr</p>
 								</div> 
 							</div>
 							<h4 class="text-center text-white slide-heading">
