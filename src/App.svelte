@@ -744,7 +744,7 @@
 								</li>
 								<li class="fadeInLeft" style="--accent-color: #9c54e5">
 									<span class="totalshoutout infographis-count count-3"
-										>4
+										>0
 									</span> Shout Out Received
 								</li>
 							</ol>
