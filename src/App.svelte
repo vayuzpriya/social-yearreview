@@ -46,10 +46,10 @@
 						rotate: [-180, 0, 0],
 					},
 				},
-				  autoplay: {
-				    delay: 3000,
-				    disableOnInteraction: false,
-				  },
+				//   autoplay: {
+				//     delay: 3000,
+				//     disableOnInteraction: false,
+				//   },
 				keyboard: {
 					enabled: true,
 				},
