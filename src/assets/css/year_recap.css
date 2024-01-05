@@ -707,13 +707,13 @@ li:nth-child(2n) .infographis-count {
 
 .merories_insight .cat {
   color: #b7bbc8 !important;
-  margin-top: -22px;
-  background-color: #1e1f26;
-  width: fit-content;
-  padding: 5px 10px;
-  border-radius: 0 10px 10px 10px;
-  z-index: 9999;
-  position: fixed;
+    margin-top: -22px;
+    background-color: #1e1f26;
+    padding: 5px 10px;
+    border-radius: 0 10px 10px 10px;
+    z-index: 9999;
+    position: fixed;
+    width: max-content;
 }
 
 .merories_insight .desc {
@@ -759,4 +759,7 @@ li:nth-child(2n) .infographis-count {
     background-size: 800px 500px;
     height: 500px;
     position: relative;
+}
+.cat-image-insight{
+  width:25px !important;
 }
