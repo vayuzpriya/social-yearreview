@@ -570,7 +570,7 @@
 				{@html Utility.addShimmer(1)}
 				
 			</div>
-			{@html Utility.addShimmer(1)}
+			
 			<div class="memories-main-slider d-none mainmemorydiv">
 				<div class="swiper memoriesSlider">
 					<div class="swiper-wrapper">
