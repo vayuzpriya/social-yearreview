@@ -6,7 +6,7 @@
 
 
 
-ol {
+.memories-main-slider ol {
   font-family: system-ui, sans-serif;
   color: hsl(0 0% 95%);
 
@@ -108,7 +108,7 @@ ol {
 
 }
 
-li:nth-child(2n) .infographis-count {
+.memories-main-slider li:nth-child(2n) .infographis-count {
   right: 8px;
   top: 0px;
 }
